@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #0d001a, #1a0033);
+  color: #fff;
+  overflow-x: hidden; /* elimina scroll horizontal */
+}
