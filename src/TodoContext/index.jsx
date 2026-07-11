@@ -8,7 +8,16 @@ function TodoProvider({ children }) {
     //  nuestro estado - actualizador de la variable - como va empezar nuestro estado
     const [searchValue, setsearchValue] = React.useState('')
     const serchedTodo = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
+    const [openModal, setOpenModal] = React.useState(false)
 
+    const addTodo = (text) => {
+        const newTodo = [...todos]
+        newTodo.push({
+            text,
+            completed: false
+        })
+        saveTodos(newTodo)
+    }
 
     const completeTodo = (text) => {
         const newTodo = [...todos]
@@ -23,6 +32,8 @@ function TodoProvider({ children }) {
         newTodo.splice(todoIndex, 1)
         saveTodos(newTodo)
     }
+
+
     return (
         <TodoContext.Provider value={{
             loading,
@@ -34,6 +45,9 @@ function TodoProvider({ children }) {
             serchedTodo,
             completeTodo,
             deleteTodo,
+            openModal,
+            setOpenModal,
+            addTodo,
         }}>
             {children}
         </TodoContext.Provider>
