@@ -38,7 +38,11 @@ const AppUI = () => {
 
                 {/* cuando trabajamos con arreglos debemos darle una llave unica (key) */}
                 {serchedTodo.map(todo => (
-                    <TodoItem key={todo.text} text={todo.text} completed={todo.completed} onComplete={() => completeTodo(todo.text)} onDelete={() => deleteTodo(todo.text)} />
+                    <TodoItem key={todo.text} 
+                              text={todo.text} 
+                              completed={todo.completed} 
+                              onComplete={() => completeTodo(todo.text)} 
+                              onDelete={() => deleteTodo(todo.text)} />
                 ))}
             </TodoList >
             <CreateTodoButton/>
